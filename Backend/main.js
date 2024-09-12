@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const authRoutes = require('./routes/auth');
 const tradeRoutes = require('./routes/trades');
+const itiRoutes = require('./routes/iti.js');
 require('dotenv').config();
 
 const app = express();
@@ -16,7 +17,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: ['http://localhost:3000'],
+  origin: ['http://localhost:5000'],
   credentials: true
 }));
 
@@ -38,6 +39,7 @@ console.log("connected to atlas mongoDB");
 // Routes
 app.use('/auth', authRoutes);
 app.use('/trade', tradeRoutes);
+app.use('/iti', itiRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;

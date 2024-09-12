@@ -1,7 +1,7 @@
 // routes/auth.js
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user.js');
+const User = require('../models/User.js');
 const router = express.Router();
 
 // Sign up

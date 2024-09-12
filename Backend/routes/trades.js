@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const trade = require('../models/Trades.js');
+const Trade = require('../models/Trades.js');
 
 // Create a trade
 router.post('/', async (req, res) => {
@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
 // Get all trades
 router.get('/', async (req, res) => {
   try {
-    const trades = await Trade.findAll();
+    const trades = await Trade.find();
     res.json(trades);
   } catch (err) {
     res.status(400).send(err.message);
@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
 // Get a trade by ID
 router.get('/:id', async (req, res) => {
   try {
-    const trade = await Trade.findByPk(req.params.id);
+    const trade = await Trade.findById(req.params.id);
     if (trade) {
       res.json(trade);
     } else {
@@ -39,9 +39,9 @@ router.get('/:id', async (req, res) => {
 // Update a trade
 router.put('/:id', async (req, res) => {
   try {
-    const trade = await Trade.findByPk(req.params.id);
+    const trade = await Trade.findById(req.params.id);
     if (trade) {
-      await trade.update(req.body);
+      await trade.updateOne(req.body);
       res.json(trade);
     } else {
       res.status(404).send('Trade not found');
@@ -54,9 +54,9 @@ router.put('/:id', async (req, res) => {
 // Delete a trade
 router.delete('/:id', async (req, res) => {
   try {
-    const trade = await Trade.findByPk(req.params.id);
+    const trade = await Trade.findById(req.params.id);
     if (trade) {
-      await trade.destroy();
+      await trade.deleteOne();
       res.send('Trade deleted');
     } else {
       res.status(404).send('Trade not found');
