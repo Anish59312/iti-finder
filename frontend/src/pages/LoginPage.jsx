@@ -1,13 +1,45 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
+
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Login attempted with:', { email, password });
+
+    try {
+      const response = await fetch('http://localhost:5000/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include', // To include cookies (like JWT)
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSuccess('Login successful');
+        setError('');
+        navigate('/trade')
+        console.log('Logged in:', data);
+      } else {
+        setError(data.message || 'Login failed');
+        setSuccess('');
+      }
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+      setSuccess('');
+    }
   };
 
   return (
@@ -72,6 +104,8 @@ export default function LoginPage() {
             </div>
           </div>
         </form>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+      {success && <p style={{ color: 'green' }}>{success}</p>}
       </div>
     </div>
   );

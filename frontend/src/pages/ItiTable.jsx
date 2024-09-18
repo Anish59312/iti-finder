@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Search, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useColorModes } from '@coreui/react';
+// import { useColorModes } from '@coreui/react';
 
 
 // Mock data for the table

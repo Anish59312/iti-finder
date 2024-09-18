@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 
 
 export default function SignupPage() {
@@ -7,17 +8,41 @@ export default function SignupPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const navigate = useNavigate();
+  // console.log("Inside Signup Page");
 
-  console.log("Inside Signup Page");
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("submit called")
     // Here you would typically handle the signup logic
     if (password !== confirmPassword) {
       alert("Passwords don't match!");
       return;
     }
-    console.log('Signup attempted with:', { name, email, password });
+  
+    try {
+      // Send signup data to the backend
+      const response = await fetch('http://localhost:5000/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password }) // Assuming name isn't required in the backend
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        console.log('Signup successful:', data);
+        navigate('/InfoForm')
+        // Handle success, such as redirecting to another page
+      } else {
+        console.error('Signup failed:', data.message);
+        alert(data.message);
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
   };
 
   return (

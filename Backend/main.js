@@ -3,13 +3,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
-const cors = require('cors');
+// const cors = require('cors');
 const authRoutes = require('./routes/auth');
 const tradeRoutes = require('./routes/trades');
 const itiRoutes = require('./routes/iti.js');
+const user_info = require('./routes/user_info.js');
+
 require('dotenv').config();
 
 const app = express();
+const cors = require('cors');
+
+
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+
 
 // Middleware
 app.use(express.json());
@@ -38,8 +45,13 @@ console.log("connected to atlas mongoDB");
 
 // Routes
 app.use('/auth', authRoutes);
+
+
+
 app.use('/trade', tradeRoutes);
 app.use('/iti', itiRoutes);
+app.use('/user_info', user_info);
+
 
 // Start server
 const PORT = process.env.PORT || 5000;

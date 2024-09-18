@@ -124,3 +124,40 @@
 //    - **Supply Chain Management Assistant**
 
 // This mapping aligns with a wide array of student interests and can guide them toward trades that match their passions and skill sets. Let me know if you need more information on specific trades or courses!
+
+const mongoose = require('mongoose');
+
+const userIntrestSchema = new mongoose.Schema({
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User', // This refers to the 'User' model
+        required: true,
+      },
+    age: {type:Number ,required:true },
+    contactNo: {type:Number ,required:true},
+    location: {
+      district: { 
+        type: String, 
+        required: true,
+        enum: Object.keys(districtCityMapping)
+      },
+      city: {
+        type: String,
+        required: true,
+        validate: {
+          validator: function(city) {
+            return districtCityMapping[this.location.district].includes(city);
+          },
+          message: props => `${props.value} is not a valid city for the district ${props.instance.location.district}`
+        }
+      }
+    },
+    qualification: {
+        type: String,
+        enum: ["10th fail","10th pass","12th pass"],
+        required: true
+    },    
+    createdAt: { type: Date, default: Date.now },
+});
+
+module.exports = mongoose.model('user_intrest', userIntrestSchema);

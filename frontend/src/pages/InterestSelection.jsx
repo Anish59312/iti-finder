@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Info } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+
 
 const interests = [
   {
@@ -87,6 +89,8 @@ const interests = [
 function InterestSelection() {
   const [selectedInterests, setSelectedInterests] = useState([]);
   const [openInfo, setOpenInfo] = useState(0);
+  const location = useLocation();
+  const { formData } = location.state || {};
 
   const handleInterestChange = (title, index) => {
     setSelectedInterests(prevInterests => 
@@ -100,6 +104,32 @@ function InterestSelection() {
   const toggleInfo = (index) => {
     setOpenInfo(openInfo === index ? null : index);
   };
+
+    const handleSubmit = async () => {
+      console.log(formData)
+      console.log(selectedInterests);
+      
+
+      // try {
+      //   const response = await fetch('https://your-api-url.com/api/userinfo', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //     body: JSON.stringify(formData),
+      //   });
+  
+      //   if (response.ok) {
+      //     alert('Form submitted successfully!');
+      //     navigate('/'); // Redirect to the home page or another page
+      //   } else {
+      //     alert('Error submitting the form');
+      //   }
+      // } catch (error) {
+      //   console.error('Error:', error);
+      // }
+    };
+
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -147,7 +177,7 @@ function InterestSelection() {
       <div className="mt-8 text-center">
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          onClick={() => console.log('Selected Interests:', selectedInterests)}
+          onClick={handleSubmit}
         >
           Submit Interests
         </button>
