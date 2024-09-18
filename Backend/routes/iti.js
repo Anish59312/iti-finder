@@ -13,6 +13,18 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+// Add multiple ITI records at once
+router.post('/bulk', async (req, res) => {
+    try {
+      const itiRecords = req.body; // Expect an array of ITI records in the request body
+      const insertedRecords = await Iti.insertMany(itiRecords);
+      res.status(201).json(insertedRecords); // Return the newly inserted records
+    } catch (err) {
+      res.status(400).json({ error: err.message });
+    }
+  });  
+
 // Get all ITIs
 router.get('/', async (req, res) => {
   try {
