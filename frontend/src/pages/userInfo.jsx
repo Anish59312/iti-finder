@@ -45,6 +45,8 @@ const FormPage = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log(formData)
     try {
       const response = await fetch('http://localhost:5000/user_info/create', {
         method: 'POST',
@@ -52,6 +54,7 @@ const FormPage = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
+        credentials: 'include' 
       });
 
       if (response.ok) {

@@ -9,6 +9,7 @@ export default function SignupPage() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const navigate = useNavigate();
+  
   // console.log("Inside Signup Page");
 
   const handleSubmit = async (e) => {
@@ -34,7 +35,38 @@ export default function SignupPage() {
   
       if (response.ok) {
         console.log('Signup successful:', data);
-        navigate('/InfoForm')
+
+
+
+        try {
+          const response1 = await fetch('http://localhost:5000/auth/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            credentials: 'include', // To include cookies (like JWT)
+            body: JSON.stringify({ email, password }),
+          });
+    
+          const data1 = await response1.json();
+    
+          if (response1.ok) {
+            // setSuccess('Login successful');
+            // setError('');
+            
+            navigate('/InfoForm')
+            console.log('Logged in:', data1);
+          } else {
+            // setError(data1.message || 'Login failed');
+            // setSuccess('');
+          }
+        } catch (err) {
+          // setError('Something went wrong. Please try again.');
+          // setSuccess('');
+        }
+
+
+        // navigate('/InfoForm')
         // Handle success, such as redirecting to another page
       } else {
         console.error('Signup failed:', data.message);
