@@ -45,22 +45,29 @@ const FormPage = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log(formData)
+  
+    const { district, city, age, contactNo, qualification } = formData;
+  
+    const formDataToSend = {
+      age,
+      contactNo,
+      location: { district, city },  // Correct structure for location
+      qualification
+    };
+  
     try {
       const response = await fetch('http://localhost:5000/user_info/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
-        credentials: 'include' 
+        body: JSON.stringify(formDataToSend),  // Send the correctly structured formData
+        credentials: 'include'
       });
-
+  
       if (response.ok) {
-        const data = await response.json();
-        navigate('/interest')
-        alert('Form submitted successfully!');
+        navigate('/interest');
+        console.log('Form submitted successfully!');
       } else {
         alert('Error submitting the form');
       }
@@ -68,6 +75,7 @@ const FormPage = () => {
       console.error('Error:', error);
     }
   };
+  
 
   // Inline styles
   const formStyle = {
