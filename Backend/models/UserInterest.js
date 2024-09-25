@@ -1,5 +1,3 @@
-// 20 interests pointed out below
-
 // ### 1. **Mechanical Interest**
 //    - **Fitter**  
 //    - **Turner**  
@@ -123,41 +121,204 @@
 //    - **Inventory Management Technician**  
 //    - **Supply Chain Management Assistant**
 
-// This mapping aligns with a wide array of student interests and can guide them toward trades that match their passions and skill sets. Let me know if you need more information on specific trades or courses!
+const Intrest_list = [
+  {
+    "Interest": "Mechanical Interest",
+    "Roles": [
+      "Fitter",
+      "Turner",
+      "Machinist",
+      "Mechanic (Motor Vehicle)",
+      "Mechanic Diesel",
+      "Draughtsman (Mechanical)",
+      "Tool and Die Maker"
+    ]
+  },
+  {
+    "Interest": "Electrical and Electronics Interest",
+    "Roles": [
+      "Electrician",
+      "Wireman",
+      "Electronics Mechanic",
+      "Mechanic Consumer Electronics",
+      "Electrical Maintenance",
+      "Instrument Mechanic",
+      "Refrigeration and Air Conditioning Technician"
+    ]
+  },
+  {
+    "Interest": "Civil and Architectural Interest",
+    "Roles": [
+      "Surveyor",
+      "Draughtsman (Civil)",
+      "Interior Design and Decoration",
+      "Plumber"
+    ]
+  },
+  {
+    "Interest": "Information Technology and Computers Interest",
+    "Roles": [
+      "Computer Operator and Programming Assistant (COPA)",
+      "Information and Communication Technology System Maintenance (ICTSM)",
+      "Desktop Publishing Operator",
+      "Web Designing and Multimedia",
+      "Software Development",
+      "Database Management"
+    ]
+  },
+  {
+    "Interest": "Chemical and Laboratory Interest",
+    "Roles": [
+      "Laboratory Assistant (Chemical Plant)",
+      "Attendant Operator (Chemical Plant)",
+      "Instrument Mechanic (Chemical Plant)",
+      "Plastic Processing Operator"
+    ]
+  },
+  {
+    "Interest": "Automobile Interest",
+    "Roles": [
+      "Mechanic Motor Vehicle",
+      "Mechanic Diesel",
+      "Mechanic (Tractor)",
+      "Mechanic Auto Electrical and Electronics"
+    ]
+  },
+  {
+    "Interest": "Textile and Fashion Interest",
+    "Roles": [
+      "Fashion Design Technology",
+      "Sewing Technology",
+      "Dressmaking",
+      "Surface Ornamentation Techniques (Embroidery)",
+      "Textile Technology (Spinning/Weaving/Knitting)"
+    ]
+  },
+  {
+    "Interest": "Agriculture and Rural Development Interest",
+    "Roles": [
+      "Agriculture Machinery Mechanic",
+      "Horticulture",
+      "Poultry Farming",
+      "Agro-Processing"
+    ]
+  },
+  {
+    "Interest": "Construction and Woodworking Interest",
+    "Roles": [
+      "Carpenter",
+      "Mason (Building Constructor)",
+      "Furniture and Cabinet Maker",
+      "Construction Equipment Mechanic"
+    ]
+  },
+  {
+    "Interest": "Healthcare and Beauty Interest",
+    "Roles": [
+      "Health Sanitary Inspector",
+      "Cosmetology",
+      "Hair and Skin Care",
+      "Spa Therapy"
+    ]
+  },
+  {
+    "Interest": "Printing and Graphics Interest",
+    "Roles": [
+      "Offset Printing",
+      "Screen Printing",
+      "Book Binder",
+      "Pre/Press Operator"
+    ]
+  },
+  {
+    "Interest": "Welding and Metal Work Interest",
+    "Roles": [
+      "Welder (Gas and Electric)",
+      "Sheet Metal Worker",
+      "Forger and Heat Treater",
+      "Foundryman"
+    ]
+  },
+  {
+    "Interest": "Industrial Automation and Instrumentation Interest",
+    "Roles": [
+      "Industrial Automation Technician",
+      "Instrument Mechanic",
+      "Boiler Attendant",
+      "Maintenance Mechanic (Chemical Plant)"
+    ]
+  },
+  {
+    "Interest": "Food Processing Interest",
+    "Roles": [
+      "Food Production (General)",
+      "Bakery and Confectionery",
+      "Food and Beverage Service Assistant"
+    ]
+  },
+  {
+    "Interest": "Hospitality and Tourism Interest",
+    "Roles": [
+      "Hospitality Management",
+      "Front Office Assistant",
+      "Travel and Tour Assistant",
+      "Catering and Hospitality Assistant"
+    ]
+  },
+  {
+    "Interest": "Art and Craft Interest",
+    "Roles": [
+      "Hand Embroidery",
+      "Craftsman Food Production (Vegetarian and Non-Vegetarian)",
+      "Weaving of Silk and Woolen Fabrics"
+    ]
+  },
+  {
+    "Interest": "Environment and Safety Interest",
+    "Roles": [
+      "Fire Technology and Industrial Safety Management",
+      "Environment Protection Technology",
+      "Sanitary Hardware Fitter"
+    ]
+  },
+  {
+    "Interest": "Telecommunication Interest",
+    "Roles": [
+      "Mechanic (Telecommunication Systems)",
+      "Mechanic (Radio and Television)",
+      "Telecommunication Technician"
+    ]
+  },
+  {
+    "Interest": "Renewable Energy and Green Technology Interest",
+    "Roles": [
+      "Solar Technician",
+      "Renewable Energy Systems Technician",
+      "Wind Energy Technician"
+    ]
+  },
+  {
+    "Interest": "Logistics and Supply Chain Interest",
+    "Roles": [
+      "Warehouse Executive",
+      "Inventory Management Technician",
+      "Supply Chain Management Assistant"
+    ]
+  }
+]
 
 const mongoose = require('mongoose');
 
-const userIntrestSchema = new mongoose.Schema({
+const IntrestSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User', // This refers to the 'User' model
+        ref: 'User', 
         required: true,
       },
-    age: {type:Number ,required:true },
-    contactNo: {type:Number ,required:true},
-    location: {
-      district: { 
-        type: String, 
-        required: true,
-        enum: Object.keys(districtCityMapping)
-      },
-      city: {
-        type: String,
-        required: true,
-        validate: {
-          validator: function(city) {
-            return districtCityMapping[this.location.district].includes(city);
-          },
-          message: props => `${props.value} is not a valid city for the district ${props.instance.location.district}`
-        }
-      }
-    },
-    qualification: {
-        type: String,
-        enum: ["10th fail","10th pass","12th pass"],
-        required: true
-    },    
-    createdAt: { type: Date, default: Date.now },
+    Intrest_index:{
+        type: [Number],
+        require: true,
+    }
 });
 
-module.exports = mongoose.model('user_intrest', userIntrestSchema);
+module.exports = mongoose.model('intrest', IntrestSchema);

@@ -1,8 +1,6 @@
 const UserInfo = require('../models/userInfo.js'); // Update with the correct path to your model file
-const jwt = require('jsonwebtoken');
 const express = require('express');
 const router = express.Router();
-const secretKey = 'your_secret_key'; // Replace with your actual secret key
 
 // Create a new user info entry
 router.post('/create', async (req, res) => {

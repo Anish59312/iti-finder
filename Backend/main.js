@@ -8,6 +8,7 @@ const authRoutes = require('./routes/auth');
 const tradeRoutes = require('./routes/trades');
 const itiRoutes = require('./routes/iti.js');
 const user_info = require('./routes/user_info.js');
+const user_intrest = require('./routes/user_interest.js')
 const jwt = require('jsonwebtoken');
 
 
@@ -78,6 +79,7 @@ console.log("connected to atlas mongoDB");
 app.use('/auth', authRoutes);
 app.use(authMiddleware);
 app.use('/user_info', user_info);
+app.use('/user_intrest',user_intrest)
 app.use('/trade', tradeRoutes);
 app.use('/iti', itiRoutes);
 
