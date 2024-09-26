@@ -77,4 +77,36 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+const express = require('express');
+const ITI = require('../models/iti');  // ITI model
+const ITITrade = require('../models/itiTrade');  // ITITrade model
+
+// Route to get ITIs by trade IDs
+router.get('/itis-by-trades', async (req, res) => {
+  try {
+    const { tradeIds } = req.query;
+
+    if (!tradeIds || tradeIds.length === 0) {
+      return res.status(400).json({ error: 'No trade IDs provided' });
+    }
+
+    const tradeIdArray = tradeIds.split(',').map(id => parseInt(id, 10));
+
+    // Find ITIs that provide any of the trades in tradeIdArray
+    const itiTrades = await ITITrade.find({ trade_id: { $in: tradeIdArray } });
+
+    // Extract ITI codes from itiTrades
+    const itiCodes = itiTrades.map(itiTrade => itiTrade.iti_code);
+
+    // Find ITIs by the extracted ITI codes
+    const itis = await ITI.find({ iti_code: { $in: itiCodes } });
+
+    res.json(itis);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
 module.exports = router;
