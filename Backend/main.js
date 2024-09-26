@@ -8,7 +8,8 @@ const authRoutes = require('./routes/auth');
 const tradeRoutes = require('./routes/trades');
 const itiRoutes = require('./routes/iti.js');
 const user_info = require('./routes/user_info.js');
-const user_intrest = require('./routes/user_interest.js')
+const user_intrest = require('./routes/user_interest.js');
+const iti_trade = require('./routes/iti_trades.js');
 const jwt = require('jsonwebtoken');
 
 
@@ -33,8 +34,6 @@ const authMiddleware = (req, res, next) => {
   if (!token) {
     return res.status(401).json({ message: 'Access denied. No token provided.' });
   }
-
-  // console.log(token);
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
@@ -82,6 +81,7 @@ app.use('/user_info', user_info);
 app.use('/user_intrest',user_intrest)
 app.use('/trade', tradeRoutes);
 app.use('/iti', itiRoutes);
+app.use('/ititrade', iti_trade);
 
 
 // Start server

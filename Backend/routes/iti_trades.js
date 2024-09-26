@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ITITrade = require('../models/ITITrade'); // Import the model
+const ITITrade = require('../models/ItiTrades'); // Import the model
 
 // Create a new ITI Trade
 router.post('/', async (req, res) => {
