@@ -49,6 +49,12 @@ export default function TradeTable() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Selected Trades:', selectedTrades);
+    const tradeIDs = selectedTrades.join(',');
+
+    console.log("hello")
+    document.cookie = `tradeIDs=${tradeIDs};path=/;`;
+    console.log("world")
+
     window.location.href = "http://localhost:3000/iti";
   };
 
