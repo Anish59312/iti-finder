@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Info } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import interests from '../data/UserInterst.jsx';
+import UserInterest from '../data/UserInterst.jsx';
 
 // const interests = [
 //   {
@@ -190,12 +190,18 @@ import interests from '../data/UserInterst.jsx';
 // ]
 
 function InterestSelection() {
+  
+  const params = new URLSearchParams(window.location.search);
+  const lang = params.get('lang') ?? 'en';
+  const interests = UserInterest.gu;
+  console.log(UserInterest);
+
   const navigate = useNavigate();
   const [selectedInterests, setSelectedInterests] = useState([]);
   const [openInfo, setOpenInfo] = useState(null);
   const location = useLocation();
   const { formData } = location.state || {};
-
+  
   const handleInterestChange = (index) => {
     setSelectedInterests(prevInterests => 
       prevInterests.includes(index)
