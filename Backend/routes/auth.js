@@ -6,22 +6,31 @@ const router = express.Router();
 
 // Sign up
 router.post('/signup', async (req, res) => {
-  
+
   console.log("Signup called!!!")
   const { email, password } = req.body;
+
   try {
     const userExists = await User.findOne({ email });
-    if (userExists) return res.status(400).json({ message: 'User already exists' });
+    if (userExists) {
+      return res.status(400).json({ message: 'User already exists' });
+    }
 
     const user = new User({ email, password });
     await user.save();
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
     res.cookie('token', token, { httpOnly: true }).json({ message: 'User created', user });
+
   } catch (error) {
-    res.status(500).json({ message: `error: ${error}` }); 
+    if (error.code === 11000) {
+      // Handle duplicate key error for email
+      return res.status(400).json({ message: 'Email already registered' });
+    }
+    res.status(500).json({ message: `Server error: ${error.message}` });
   }
 });
+
 
 // Login
 router.post('/login', async (req, res) => {

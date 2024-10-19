@@ -1,27 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Search, Info, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-// Mock data for the table
-const trades = [
-  { id: 1, name: 'Electrician', code: 'ELC101', type: 'Technical', duration: '2 years', minQualification: '10th Pass', language: 'English', nsqfLevel: 4 },
-  { id: 2, name: 'Plumber', code: 'PLB102', type: 'Technical', duration: '1 year', minQualification: '8th Pass', language: 'English', nsqfLevel: 3 },
-  { id: 3, name: 'Welder', code: 'WLD103', type: 'Technical', duration: '1 year', minQualification: '10th Pass', language: 'English', nsqfLevel: 4 },
-  { id: 4, name: 'Carpenter', code: 'CRP104', type: 'Technical', duration: '1 year', minQualification: '8th Pass', language: 'English', nsqfLevel: 3 },
-  { id: 5, name: 'Mechanic', code: 'MEC105', type: 'Technical', duration: '2 years', minQualification: '10th Pass', language: 'English', nsqfLevel: 4 },
-  // Add more mock data as needed
-];
 
+// Main component
 export default function TradeTable() {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedTrade, setSelectedTrade] = useState(null);
   const [selectedTrades, setSelectedTrades] = useState([]);
+  const [trades, setTrades] = useState([]); // State to hold fetched trades
   const itemsPerPage = 5;
 
+  // Fetch trades data when the component mounts
+  useEffect(() => {
+    const fetchTrades = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/trade/get_all', {
+          method: 'GET',
+          credentials: 'include', // Include credentials in the request
+        });
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setTrades(data); // Set the fetched trades
+      } catch (error) {
+        console.error('Error fetching trades:', error);
+      }
+    };    
+
+    fetchTrades();
+  }, []); // Empty dependency array means this runs once when the component mounts
+
   const filteredTrades = trades.filter(trade =>
-    trade.name.toLowerCase().includes(searchTerm.toLowerCase())
+    trade.tradeName.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const totalPages = Math.ceil(filteredTrades.length / itemsPerPage);
@@ -51,7 +67,7 @@ export default function TradeTable() {
     console.log('Selected Trades:', selectedTrades);
     const tradeIDs = selectedTrades.join(',');
     document.cookie = `tradeIDs=${tradeIDs};path=/;`;
-    window.location.href = "http://localhost:3000/iti";
+    navigate('/iti')
   };
 
   return (
@@ -70,121 +86,56 @@ export default function TradeTable() {
         />
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
       </div>
-    
+
       <div className='overflow-x-auto'>
         <table className="bg-white min-w-full">
-            <thead>
+          <thead>
             <tr>
-                <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                 <span className="group relative">
-                    Select
-                    <span className="absolute hidden min-w-64 group-hover:block bg-gray-800 text-white text-xs rounded p-2">
+                  Select
+                  <span className="absolute hidden min-w-64 group-hover:block bg-gray-800 text-white text-xs rounded p-2">
                     Select the trade
-                    </span>
+                  </span>
                 </span>
-                </th>
-                <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                <span className="group relative">
-                    Trade ID
-                    <span className="absolute hidden min-w-64 group-hover:block bg-gray-800 text-white text-xs rounded p-2">
-                    Unique identifier for the trade
-                    </span>
-                </span>
-                </th>
-                <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                <span className="group relative">
-                    Trade Name
-                    <span className="absolute hidden min-w-64 group-hover:block bg-gray-800 text-white text-xs rounded p-2 ">
-                    Name of the trade
-                    </span>
-                </span>
-                </th>
-                <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                <span className="group relative">
-                    Info
-                    <span className="absolute hidden  min-w-64 group-hover:block bg-gray-800 text-white text-xs rounded p-2 ">
-                    Click for more information
-                    </span>
-                </span>
-                </th>
-                <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                <span className="group relative">
-                    Trade Code
-                    <span className="absolute hidden  min-w-64 group-hover:block bg-gray-800 text-white text-xs rounded p-2 ">
-                    Unique code for the trade
-                    </span>
-                </span>
-                </th>
-                <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                <span className="group relative">
-                    Trade Type
-                    <span className="absolute hidden min-w-64 group-hover:block bg-gray-800 text-white text-xs rounded p-2">
-                    Category of the trade
-                    </span>
-                </span>
-                </th>
-                <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                <span className="group relative">
-                    Duration
-                    <span className="absolute hidden min-w-64 group-hover:block bg-gray-800 text-white text-xs rounded p-2">
-                    Time to complete the trade
-                    </span>
-                </span>
-                </th>
-                <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                <span className="group relative">
-                    Minimum Qualification
-                    <span className="absolute hidden min-w-64 group-hover:block bg-gray-800 text-white text-xs rounded p-2 ">
-                    Qualification at the time of taking admission
-                    </span>
-                </span>
-                </th>
-                <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                <span className="group relative">
-                    Language
-                    <span className="absolute hidden min-w-64 group-hover:block bg-gray-800 text-white text-xs rounded p-2 -mt-8">
-                    Official language of teaching
-                    </span>
-                </span>
-                </th>
-                <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                <span className="group relative">
-                    NSQF level
-                    <span className="absolute hidden min-w-64 group-hover:block bg-gray-800 text-white text-xs rounded -left-64 p-2 -mt-8">
-                        NSQF (National Skills Qualifications Framework) Level <a href="https://www.nqr.gov.in/level-descriptors" className='text-cyan-500'>(*)</a>
-                    </span>
-                </span>
-                </th>
+              </th>
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Trade ID</th>
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Trade Name</th>
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Info</th>
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Trade Code</th>
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Trade Type</th>
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Duration</th>
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Minimum Qualification</th>
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">NSQF Level</th>
             </tr>
-            </thead>
-            <tbody>
+          </thead>
+          <tbody>
             {currentItems.map((trade) => (
-                <tr key={trade.id}>
+              <tr key={trade.no}>
                 <td className="px-6 py-4 whitespace-nowrap">
-                    <input
+                  <input
                     type="checkbox"
-                    checked={selectedTrades.includes(trade.id)}
-                    onChange={() => handleCheckboxChange(trade.id)}
+                    checked={selectedTrades.includes(trade.no)}
+                    onChange={() => handleCheckboxChange(trade.no)}
                     className="form-checkbox h-5 w-5 text-blue-600"
-                    />
+                  />
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">{trade.id}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{trade.name}</td>
+                <td className="px-6 py-4 whitespace-nowrap">{trade.no}</td>
+                <td className="px-6 py-4 whitespace-nowrap">{trade.tradeName}</td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                    <button onClick={() => openModal(trade)} className="text-blue-600 hover:text-blue-800">
+                  <button onClick={() => openModal(trade)} className="text-blue-600 hover:text-blue-800">
                     <Info className="h-4 w-4" />
-                    <span className="sr-only">More info about {trade.name}</span>
-                    </button>
+                    <span className="sr-only">More info about {trade.tradeName}</span>
+                  </button>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">{trade.code}</td>
+                <td className="px-6 py-4 whitespace-nowrap">{trade.tradeCode}</td>
                 <td className="px-6 py-4 whitespace-nowrap">{trade.type}</td>
                 <td className="px-6 py-4 whitespace-nowrap">{trade.duration}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{trade.minQualification}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{trade.language}</td>
+                <td className="px-6 py-4 whitespace-nowrap">{trade.minimumEducationalQualification}</td>
                 <td className="px-6 py-4 whitespace-nowrap">{trade.nsqfLevel}</td>
-                </tr>
+              </tr>
             ))}
-            </tbody>
+          </tbody>
         </table>
       </div>
 
@@ -213,7 +164,7 @@ export default function TradeTable() {
       {modalOpen && selectedTrade && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg p-6 max-w-sm w-full">
-            <h2 className="text-xl font-bold mb-4">{selectedTrade.name}</h2>
+            <h2 className="text-xl font-bold mb-4">{selectedTrade.tradeName}</h2>
             <div className="grid gap-4">
               <div className="grid grid-cols-2 items-center gap-4">
                 <span className="font-medium">Duration:</span>
@@ -221,34 +172,33 @@ export default function TradeTable() {
               </div>
               <div className="grid grid-cols-2 items-center gap-4">
                 <span className="font-medium">Minimum Qualification:</span>
-                <span>{selectedTrade.minQualification}</span>
-              </div>
-              <div className="grid grid-cols-2 items-center gap-4">
-                <span className="font-medium">Language:</span>
-                <span>{selectedTrade.language}</span>
+                <span>{selectedTrade.minimumEducationalQualification}</span>
               </div>
               <div className="grid grid-cols-2 items-center gap-4">
                 <span className="font-medium">NSQF Level:</span>
                 <span>{selectedTrade.nsqfLevel}</span>
               </div>
             </div>
-            <button
-              onClick={() => setModalOpen(false)}
-              className="mt-6 w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-            >
-              Close
-            </button>
+            <div className="mt-4">
+              <button
+                onClick={() => setModalOpen(false)}
+                className="px-4 py-2 border rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       )}
-      <div className="mt-8 text-center">
+
+      <form onSubmit={handleSubmit}>
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          onClick={handleSubmit}
+          type="submit"
+          className="mt-4 px-4 py-2 border rounded-md text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
         >
-          Submit Trade
+          Submit Selected Trades
         </button>
-      </div>
+      </form>
     </div>
   );
 }

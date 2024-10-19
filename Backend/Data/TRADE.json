@@ -1,0 +1,859 @@
+[
+    {
+        "No.": 1,
+        "Trade_Code": 3047,
+        "Trade_Name": "Attendant Operator (Chemical Plant)",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "10+2 with Science Subjects or equivalent",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 2,
+        "Trade_Code": 3031,
+        "Trade_Name": "Draftsman (Mechanical)",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 3,
+        "Trade_Code": 3115,
+        "Trade_Name": "Electrician",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 4,
+        "Trade_Code": 3063,
+        "Trade_Name": "Electronic Mechanic",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 5,
+        "Trade_Code": 3032,
+        "Trade_Name": "Fitter",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 6,
+        "Trade_Code": 3033,
+        "Trade_Name": "Foundryman",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10th pass",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 7,
+        "Trade_Code": 3090,
+        "Trade_Name": "Information and Communication Technology System Maintenance",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "10+2 with Science Subjects or equivalent",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 8,
+        "Trade_Code": 3065,
+        "Trade_Name": "Instrument Mechanic",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 9,
+        "Trade_Code": 3048,
+        "Trade_Name": "Instrument Mechanic (Chemical Plant)",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 10,
+        "Trade_Code": 3057,
+        "Trade_Name": "Interior Design and Decoration",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 11,
+        "Trade_Code": 3049,
+        "Trade_Name": "Laboratory Assistant (Chemical Plant)",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 12,
+        "Trade_Code": 3035,
+        "Trade_Name": "Machinist",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 13,
+        "Trade_Code": 3036,
+        "Trade_Name": "Machinist (Grinder)",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 14,
+        "Trade_Code": 3050,
+        "Trade_Name": "Maintenance Mechanic (Chemical Plant)",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 15,
+        "Trade_Code": 3026,
+        "Trade_Name": "Marine Fitter",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 16,
+        "Trade_Code": 3017,
+        "Trade_Name": "Mechanic Tractor",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 17,
+        "Trade_Code": 3015,
+        "Trade_Name": "Mechanic Diesel",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 18,
+        "Trade_Code": 3016,
+        "Trade_Name": "Mechanic Motor Vehicle",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 19,
+        "Trade_Code": 3067,
+        "Trade_Name": "Refrigeration and Air Conditioning Technician",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 20,
+        "Trade_Code": 3051,
+        "Trade_Name": "Plastic Processing Operator",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 with Science Subjects or equivalent",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 21,
+        "Trade_Code": 3060,
+        "Trade_Name": "Surveyor",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 22,
+        "Trade_Code": 3039,
+        "Trade_Name": "Tool and Die Maker (Press Tools, Jigs, and Fixtures)",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 23,
+        "Trade_Code": 3040,
+        "Trade_Name": "Turner",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 24,
+        "Trade_Code": 3020,
+        "Trade_Name": "Cosmetology",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 with Science Subjects or equivalent",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 25,
+        "Trade_Code": 3094,
+        "Trade_Name": "Computer Operator and Programming Assistant (COPA)",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Non-Engineering, Non-Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 26,
+        "Trade_Code": 3097,
+        "Trade_Name": "Desktop Publishing Operator",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 27,
+        "Trade_Code": 3055,
+        "Trade_Name": "Draftsman (Civil)",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "10+2 with Science Subjects or equivalent",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 28,
+        "Trade_Code": 3007,
+        "Trade_Name": "Dress Making",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 8th pass",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 29,
+        "Trade_Code": 3008,
+        "Trade_Name": "Fashion Designing and Technology",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 30,
+        "Trade_Code": 3085,
+        "Trade_Name": "Health Sanitary Inspector",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 31,
+        "Trade_Code": 3114,
+        "Trade_Name": "Plumber",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 8th pass",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 32,
+        "Trade_Code": 3009,
+        "Trade_Name": "Sewing Technology",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 33,
+        "Trade_Code": 3103,
+        "Trade_Name": "Stenographer Secretarial Assistant (English)",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 34,
+        "Trade_Code": 3126,
+        "Trade_Name": "Surface Ornamentation Techniques (Embroidery)",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 8th pass",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 35,
+        "Trade_Code": 3059,
+        "Trade_Name": "Painter General",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 36,
+        "Trade_Code": 3037,
+        "Trade_Name": "Sheet Metal Worker",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 37,
+        "Trade_Code": 3041,
+        "Trade_Name": "Welder",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 38,
+        "Trade_Code": 3116,
+        "Trade_Name": "Wireman",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 39,
+        "Trade_Code": 3086,
+        "Trade_Name": "Physiotherapy Technician",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 40,
+        "Trade_Code": 3093,
+        "Trade_Name": "Computer Hardware and Networking Maintenance",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass (with Science subjects)",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 41,
+        "Trade_Code": 3128,
+        "Trade_Name": "Front Office Assistant",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 42,
+        "Trade_Code": 3117,
+        "Trade_Name": "Fire Technology and Industrial Safety Management",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 43,
+        "Trade_Code": 3052,
+        "Trade_Name": "Wood Work Technician (Carpenter / General Carpenter)",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 8th pass",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 44,
+        "Trade_Code": 3058,
+        "Trade_Name": "Mason (Building Constructor)",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "8th pass",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 45,
+        "Trade_Code": 3013,
+        "Trade_Name": "Mechanic Auto Body Repair",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass (with Science subjects) or equivalent",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 46,
+        "Trade_Code": 3012,
+        "Trade_Name": "Mechanic Auto Body Painting",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 47,
+        "Trade_Code": 3010,
+        "Trade_Name": "Driver cum Mechanic (Light Motor Vehicle)",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "8th pass (18 years old)",
+        "Type": "Non-Engineering",
+        "Duration": "6 months"
+    },
+    {
+        "No.": 48,
+        "Trade_Code": 3024,
+        "Trade_Name": "Additive Manufacturing Technician (3D Printing)",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass (with Science subjects)",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 49,
+        "Trade_Code": 3029,
+        "Trade_Name": "Work Technical Draftsman",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 50,
+        "Trade_Code": 3053,
+        "Trade_Name": "Civil Engineering Assistant",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 51,
+        "Trade_Code": 3068,
+        "Trade_Name": "IoT Technician (Smart Agriculture)",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass (with Science subjects)",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 52,
+        "Trade_Code": 3069,
+        "Trade_Name": "IoT Technician (Smart City)",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 53,
+        "Trade_Code": 3070,
+        "Trade_Name": "IoT Technician (Smart Healthcare)",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 54,
+        "Trade_Code": 3018,
+        "Trade_Name": "Mechanic Two and Three Wheeler",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 55,
+        "Trade_Code": 3001,
+        "Trade_Name": "Remotely Piloted Aircraft - Drone Pilot",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10th pass (with Science subjects) (18 years old)",
+        "Type": "Non-Engineering",
+        "Duration": "6 months"
+    },
+    {
+        "No.": 56,
+        "Trade_Code": 3071,
+        "Trade_Name": "Smart Phone Technician cum App Tester",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10th pass",
+        "Type": "Non-Engineering",
+        "Duration": "6 months"
+    },
+    {
+        "No.": 57,
+        "Trade_Code": 3073,
+        "Trade_Name": "Solar Technician (Electrical)",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass (with Science subjects)",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 58,
+        "Trade_Code": 3137,
+        "Trade_Name": "Technician Mechatronics",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 59,
+        "Trade_Code": 3088,
+        "Trade_Name": "Technician Medical Electronics",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 60,
+        "Trade_Code": 3042,
+        "Trade_Name": "Welder (Fabrication & Fitting)",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "8th pass",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 61,
+        "Trade_Code": 3043,
+        "Trade_Name": "Welder (GMAW & GTAW)",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "8th pass",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 62,
+        "Trade_Code": 3046,
+        "Trade_Name": "Welder (Welding & Inspection)",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 8th pass (with Science subjects)",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 63,
+        "Trade_Code": 3119,
+        "Trade_Name": "Health Safety and Environment",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 64,
+        "Trade_Code": 3087,
+        "Trade_Name": "Old Age Care Assistant",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 65,
+        "Trade_Code": 3132,
+        "Trade_Name": "Housekeeper",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 66,
+        "Trade_Code": 3118,
+        "Trade_Name": "Fireman",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "6 months"
+    },
+    {
+        "No.": 67,
+        "Trade_Code": 3131,
+        "Trade_Name": "Hospital Housekeeping",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 68,
+        "Trade_Code": 3138,
+        "Trade_Name": "Data Entry Operator",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "6 months"
+    },
+    {
+        "No.": 69,
+        "Trade_Code": 3005,
+        "Trade_Name": "Computer-Aided Embroidery and Design Training",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 70,
+        "Trade_Code": 3148,
+        "Trade_Name": "Advanced CNC Machining Technician",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Class X pass, enrolled for Class XII through NIOS, or ITI with Class X",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 71,
+        "Trade_Code": 3149,
+        "Trade_Name": "Mechanic Electrical Vehicle",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "Class X pass, enrolled for Class XII through NIOS, or ITI with Class X",
+        "Type": "Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 72,
+        "Trade_Code": 30141,
+        "Trade_Name": "Mechanic Auto Electrical and Electronics",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass (with Science subjects)",
+        "Type": "Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 73,
+        "Trade_Code": 30831,
+        "Trade_Name": "Radiology Technician",
+        "NSQF": 4,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass (with Science subjects)",
+        "Type": "Non-Engineering",
+        "Duration": "2 years"
+    },
+    {
+        "No.": 74,
+        "Trade_Code": 30611,
+        "Trade_Name": "Allied Educator",
+        "NSQF": 3,
+        "Minimum_Educational_Qualification": "10+2 or 10th pass",
+        "Type": "Non-Engineering",
+        "Duration": "1 year"
+    },
+    {
+        "No.": 101,
+        "Trade_Code": 3167,
+        "Trade_Name": "Advanced Industrial Sub-Fireman Officer",
+        "NSQF": "10+2 or 10th pass",
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "6 months"
+    },
+    {
+        "No.": 102,
+        "Trade_Code": 3179,
+        "Trade_Name": "Certificate Course in Systemware Technology Networking and Administration",
+        "NSQF": "Engineering",
+        "Minimum_Educational_Qualification": "1 year"
+    },
+    {
+        "No.": 103,
+        "Trade_Code": 3182,
+        "Trade_Name": "Certificate Course in Multimedia Technology and DTP",
+        "NSQF": "10+2 or 10th pass",
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 104,
+        "Trade_Code": 3193,
+        "Trade_Name": "Certificate Course in Library and Information Science",
+        "NSQF": "10+2 or 10th pass",
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "6 months"
+    },
+    {
+        "No.": 105,
+        "Trade_Code": 3177,
+        "Trade_Name": "Certificate Course in E-Commerce",
+        "NSQF": "Non-Engineering",
+        "Minimum_Educational_Qualification": "1 year"
+    },
+    {
+        "No.": 106,
+        "Trade_Code": 3178,
+        "Trade_Name": "Certificate Course in Software Programming",
+        "NSQF": "Non-Engineering",
+        "Minimum_Educational_Qualification": "1 year"
+    },
+    {
+        "No.": 107,
+        "Trade_Code": 3183,
+        "Trade_Name": "Certificate Course in Web Design",
+        "NSQF": "Non-Engineering",
+        "Minimum_Educational_Qualification": "1 year"
+    },
+    {
+        "No.": 108,
+        "Trade_Code": 3162,
+        "Trade_Name": "Certificate Course in Machinery Technology",
+        "NSQF": "10+2 or 10th pass (with Science subjects)",
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "2 years"
+    },
+    {
+        "No.": 109,
+        "Trade_Code": 3170,
+        "Trade_Name": "Fireman",
+        "NSQF": "Engineering",
+        "Minimum_Educational_Qualification": "1 year"
+    },
+    {
+        "No.": 110,
+        "Trade_Code": 3199,
+        "Trade_Name": "Domestic Appliance Repairer",
+        "NSQF": "10+2 or 10th pass",
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 111,
+        "Trade_Code": 3164,
+        "Trade_Name": "Man-Made Fiber Technology",
+        "NSQF": "10+2 or 10th pass",
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "2 years"
+    },
+    {
+        "No.": 112,
+        "Trade_Code": 3165,
+        "Trade_Name": "Man-Made Yarn Processing Technology",
+        "NSQF": "10+2 or 10th pass",
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "2 years"
+    },
+    {
+        "No.": 113,
+        "Trade_Code": 3152,
+        "Trade_Name": "Offset Printer and Packaging",
+        "NSQF": "Non-Engineering",
+        "Minimum_Educational_Qualification": "1 year"
+    },
+    {
+        "No.": 114,
+        "Trade_Code": 3194,
+        "Trade_Name": "Stenographer cum Computer Operator (English)",
+        "NSQF": "10+2 or 10th pass",
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 115,
+        "Trade_Code": 3185,
+        "Trade_Name": "Stenographer cum Computer Operator (Gujarati)",
+        "NSQF": "10+2 or 10th pass",
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 116,
+        "Trade_Code": 3181,
+        "Trade_Name": "Stenography (Gujarati)",
+        "NSQF": "10+2 or 10th pass",
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 117,
+        "Trade_Code": 3176,
+        "Trade_Name": "Telephone Mobile Phone Repairing",
+        "NSQF": "10+2 or 10th pass",
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "6 months"
+    },
+    {
+        "No.": 118,
+        "Trade_Code": 3156,
+        "Trade_Name": "Motor Rewinding/Coil Winder",
+        "NSQF": "10+2 or 7th pass",
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 119,
+        "Trade_Code": 3200,
+        "Trade_Name": "Construction Technician",
+        "NSQF": "10+2 or 8th pass",
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 120,
+        "Trade_Code": 3158,
+        "Trade_Name": "General Mechanic",
+        "NSQF": "10+2 or 7th pass",
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "2 years"
+    },
+    {
+        "No.": 121,
+        "Trade_Code": 3174,
+        "Trade_Name": "Software Programming and Testing Assistant",
+        "NSQF": "10+2 or 10th pass",
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "2 years"
+    },
+    {
+        "No.": 122,
+        "Trade_Code": 3150,
+        "Trade_Name": "Marine Engineering Technician",
+        "NSQF": "10+2 or 8th pass",
+        "Minimum_Educational_Qualification": "Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 123,
+        "Trade_Code": 3160,
+        "Trade_Name": "Men's and Women's Garment Making",
+        "NSQF": "10+2 or 7th pass",
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 124,
+        "Trade_Code": 3151,
+        "Trade_Name": "Offset Printing and Book Binding",
+        "NSQF": "10+2 or 8th pass",
+        "Minimum_Educational_Qualification": "Non-Engineering",
+        "Type": "1 year"
+    },
+    {
+        "No.": 125,
+        "Trade_Code": 3197,
+        "Trade_Name": "Plumbing Assistant",
+        "NSQF": "Engineering",
+        "Minimum_Educational_Qualification": "1 year"
+    },
+    {
+        "No.": 126,
+        "Trade_Code": 3189,
+        "Trade_Name": "Two Wheeler Auto Repairer",
+        "NSQF": "Engineering",
+        "Minimum_Educational_Qualification": "1 year"
+    }
+]

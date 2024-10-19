@@ -9,6 +9,7 @@ const tradeRoutes = require('./routes/trades');
 const itiRoutes = require('./routes/iti.js');
 const user_info = require('./routes/user_info.js');
 const user_intrest = require('./routes/user_interest.js')
+const iti_trade_Routes = require('./routes/iti_trades.js')
 const jwt = require('jsonwebtoken');
 
 
@@ -40,7 +41,7 @@ const authMiddleware = (req, res, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded; // Attach decoded data (e.g., user ID) to req.user
     // console.log("Authorized", req.user);
-    next(); 
+    next();
   } catch (error) {
     if (error.name === 'TokenExpiredError') {
       return res.status(401).json({ message: 'Token expired. Please log in again.' });
@@ -51,7 +52,7 @@ const authMiddleware = (req, res, next) => {
       return res.status(500).json({ message: 'Internal server error in auth middleware.' });
     }
   }
-  
+
 };
 
 
@@ -61,15 +62,6 @@ app.use(cors({
 }));
 
 const uri = process.env.MONGO_URI;
-// MongoDB connection
-// mongoose.connect(uri, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// }).then(() => {
-//   console.log("Connected to MongoDB");
-// }).catch((error) => {
-//   console.log("Error connecting to MongoDB:", error);
-// });
 
 //connection code written by anish
 mongoose.connect(uri);
@@ -79,10 +71,10 @@ console.log("connected to atlas mongoDB");
 app.use('/auth', authRoutes);
 app.use(authMiddleware);
 app.use('/user_info', user_info);
-app.use('/user_intrest',user_intrest)
+app.use('/user_intrest', user_intrest)
 app.use('/trade', tradeRoutes);
 app.use('/iti', itiRoutes);
-
+app.use('/iti_trade', iti_trade_Routes)
 
 // Start server
 const PORT = process.env.PORT || 5000;

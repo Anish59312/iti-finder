@@ -1,18 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const ITITrade = require('../models/ITITrade'); // Import the model
+const ITITrade = require('../models/ItiTrades'); // Import the model
 
+// Delete an ITI Trade by iti_code and trade_id
+// Update an ITI Trade by iti_code and trade_id
 // Create a new ITI Trade
-router.post('/', async (req, res) => {
-  try {
-    const itiTrade = new ITITrade(req.body);
-    await itiTrade.save();
-    res.status(201).json(itiTrade); // Return the newly created ITITrade
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-});
-
+// Get a specific ITI Trade by iti_code and trade_id
 // Get all ITI Trades
 router.get('/', async (req, res) => {
   try {
@@ -23,58 +16,41 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Get a specific ITI Trade by iti_code and trade_id
-router.get('/:iti_code/:id', async (req, res) => {
+// GET route to fetch a document by its _id
+router.get('/:id', async (req, res) => {
+  console.log('trade document by its _id in iti_trade')
   try {
-    const itiTrade = await ITITrade.findOne({
-      iti_code: req.params.iti_code,
-      trade_id: req.params.id,
-    });
+    const ititradeId = req.params.id;
+    const itiTrade = await ITITrade.findById(ititradeId);
 
-    if (itiTrade) {
-      res.json(itiTrade);
-    } else {
-      res.status(404).json({ message: 'ITI Trade not found' });
+    if (!itiTrade) {
+      return res.status(404).json({ message: 'Trade not found' });
     }
-  } catch (err) {
-    res.status(400).json({ error: err.message });
+    console.log(itiTrade)
+    res.status(200).json(itiTrade);
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error });
   }
 });
 
-// Update an ITI Trade by iti_code and trade_id
-router.put('/:iti_code/:trade_id', async (req, res) => {
+router.post('/itis-by-trades', async (req, res) => {
   try {
-    const itiTrade = await ITITrade.findOneAndUpdate(
-      { iti_code: req.params.iti_code, trade_id: req.params.trade_id },
-      req.body,
-      { new: true, runValidators: true } // Ensure the document is updated and valid
-    );
+    const { trade_ids } = req.body;
+    console.log('In itis by trade inside iti_trade');
+    // console.log(trade_ids);
 
-    if (itiTrade) {
-      res.json(itiTrade);
-    } else {
-      res.status(404).json({ message: 'ITI Trade not found' });
+    if (!trade_ids) {
+      return res.status(400).json({ message: 'Trade IDs are required' });
     }
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-});
 
-// Delete an ITI Trade by iti_code and trade_id
-router.delete('/:iti_code/:trade_id', async (req, res) => {
-  try {
-    const itiTrade = await ITITrade.findOneAndDelete({
-      iti_code: req.params.iti_code,
-      trade_id: req.params.trade_id,
-    });
+    const tradeIdList = trade_ids.split(',').map(Number);
 
-    if (itiTrade) {
-      res.json({ message: 'ITI Trade deleted' });
-    } else {
-      res.status(404).json({ message: 'ITI Trade not found' });
-    }
-  } catch (err) {
-    res.status(400).json({ error: err.message });
+    const itiTrades = await ITITrade.find({ Trades_Offered: { $in: tradeIdList } });
+
+    res.status(200).json({ itis: itiTrades });
+  } catch (error) {
+    console.error('Error fetching ITIs by trade IDs:', error);
+    res.status(500).json({ message: 'Server error' });
   }
 });
 

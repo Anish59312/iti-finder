@@ -3,17 +3,9 @@ const router = express.Router();
 const Trade = require('../models/Trades.js');
 
 // Create a trade
-router.post('/', async (req, res) => {
-  try {
-    const trade = await Trade.create(req.body);
-    res.json(trade);
-  } catch (err) {
-    res.status(400).send(err.message);
-  }
-});
-
 // Get all trades
-router.get('/', async (req, res) => {
+router.get('/get_all', async (req, res) => {
+  console.log('get all trade inside trade called!!')
   try {
     const trades = await Trade.find();
     res.json(trades);
@@ -22,48 +14,33 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.post('/get-trade-names', async (req, res) => {
+  try {
+    const { noList } = req.body; // Expecting an array of "no" values from the request body
+
+    // Validate that "noList" is an array and not empty
+    if (!Array.isArray(noList) || noList.length === 0) {
+      return res.status(400).json({ error: 'Invalid input. "noList" must be a non-empty array.' });
+    }
+
+    // Find documents where "no" is in the provided "noList" and only return "tradeName" field
+    const trades = await Trade.find({ no: { $in: noList } }, 'tradeName');
+
+    // Extract tradeName values into an array
+    const tradeNames = trades.map(trade => trade.tradeName);
+
+    res.json({ tradeNames });
+  } catch (error) {
+    console.error('Error fetching trade names:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Get trade based on intrest
+
+
 // Get a trade by ID
-router.get('/:id', async (req, res) => {
-  try {
-    const trade = await Trade.findById(req.params.id);
-    if (trade) {
-      res.json(trade);
-    } else {
-      res.status(404).send('Trade not found');
-    }
-  } catch (err) {
-    res.status(400).send(err.message);
-  }
-});
-
 // Update a trade
-router.put('/:id', async (req, res) => {
-  try {
-    const trade = await Trade.findById(req.params.id);
-    if (trade) {
-      await trade.updateOne(req.body);
-      res.json(trade);
-    } else {
-      res.status(404).send('Trade not found');
-    }
-  } catch (err) {
-    res.status(400).send(err.message);
-  }
-});
-
 // Delete a trade
-router.delete('/:id', async (req, res) => {
-  try {
-    const trade = await Trade.findById(req.params.id);
-    if (trade) {
-      await trade.deleteOne();
-      res.send('Trade deleted');
-    } else {
-      res.status(404).send('Trade not found');
-    }
-  } catch (err) {
-    res.status(400).send(err.message);
-  }
-});
 
 module.exports = router;

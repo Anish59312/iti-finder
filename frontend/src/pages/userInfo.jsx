@@ -1,26 +1,39 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
+import { useNavigate } from 'react-router-dom';
 
-// District-City Mapping (for form dropdowns)
-const districtCityMapping = {
-  'DistA': ['City1', 'City2', 'City3'],
-  'DistB': ['City4', 'City5'],
-  'DistC': ['City6', 'City7', 'City8', 'City9']
-};
+const talukas = [
+  "Ahmedabad", "Daskroi", "Sanand", "Sarkhej", "Bavla", "Detroj-Rampura", "Viramgam",
+  "Mandal", "Ranpur", "Dhank", "Amreli", "Babra", "Dhari", "Lathi", "Rajula", "Savarkundla",
+  "Vallabhipur", "Khambhalida", "Anand", "Borsad", "Khambhat", "Petlad", "Sojitra", "Tarapur",
+  "Umreth", "Bayad", "Malpur", "Modasa", "Dhansura", "Matar", "Khedbrahma", "Danta", "Deesa",
+  "Palanpur", "Tharad", "Vav", "Kankrej", "Kheralu", "Bharuch", "Ankleshwar", "Jhagadia", "Vagra",
+  "Amod", "Dabhoi", "Ekta Nagar", "Bhavnagar", "Bhavnagar Rural", "Mahuva", "Palitana", "Sihor",
+  "Talaja", "Botad", "Barwala", "Gadhada", "Ranpur", "Chhota Udaipur", "Chhota Udaipur", "Bodeli",
+  "Jetpur Pavi", "Kavant", "Nasvadi", "Sankheda", "Dahod", "Devgadh Baria", "Dhanpur", "Fatepura",
+  "Garbada", "Limkheda", "Sanjeli", "Khambhalia", "Okhamandal", "Bhanvad", "Kalyanpur", "Gandhinagar",
+  "Dehgam", "Kalol", "Mansa", "Gir Gadhada", "Kodinar", "Talala", "Una", "Sutrapada", "Jamnagar",
+  "Dhrol", "Kalavad", "Lalpur", "Jamjodhpur", "Jodiya", "Junagadh", "Bhesana", "Keshod", "Mangrol",
+  "Manavadar", "Visavadar", "Bhuj", "Gandhidham", "Mandvi", "Mundra", "Anjar", "Kheda", "Nadiad",
+  "Mahudha", "Matar", "Thasra", "Vaso", "Lunawada", "Balasinor", "Khanpur", "Santrampur", "Mehsana",
+  "Becharaji", "Kadi", "Unjha", "Vadnagar", "Morbi", "Tankara", "Wankaner", "Halvad", "Maliya",
+  "Rajpipla", "Dediapada", "Garudeshwar", "Nandod", "Navsari", "Chikhli", "Gandevi", "Jalalpore",
+  "Godhra", "Halol", "Jambughoda", "Kalol", "Morwa Hadaf", "Shehera", "Patan", "Harij", "Radhanpur",
+  "Sami", "Sidhpur", "Porbandar", "Kutiyana", "Ranavav", "Rajkot", "Gondal", "Jamkandorna", "Dhoraji",
+  "Himatnagar", "Idar", "Khedbrahma", "Prantij", "Surat", "Bardoli", "Choryasi", "Olpad", "Mandvi",
+  "Surendranagar", "Dhangadhra", "Chotila", "Tapi", "Songadh", "Vyara", "Vadodara", "Savli", "Karjan",
+  "Sinor", "Valsad", "Umbergaon", "Dharampur", "Ahwa", "Subir", "Waghai"
+];
 
 const FormPage = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    user: '', // This should eventually be a valid ObjectId from the user database
+    user: '',
     age: '',
     contactNo: '',
-    district: '',
-    city: '',
+    taluka: '', // Update state to use taluka instead of district and city
     qualification: '',
   });
-
-  const [cities, setCities] = useState([]); // For dynamically showing cities based on district
 
   // Handle form input changes
   const handleInputChange = (e) => {
@@ -31,51 +44,40 @@ const FormPage = () => {
     });
   };
 
-  // Handle district change to update the city options
-  const handleDistrictChange = (e) => {
-    const district = e.target.value;
-    setFormData({
-      ...formData,
-      district: district,
-      city: '' // Reset city when district changes
-    });
-    setCities(districtCityMapping[district] || []);
-  };
-
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    const { district, city, age, contactNo, qualification } = formData;
-  
+
+    const { taluka, age, contactNo, qualification } = formData;
+
     const formDataToSend = {
       age,
       contactNo,
-      location: { district, city },  // Correct structure for location
-      qualification
+      taluka, // Send taluka instead of district and city
+      qualification,
     };
-  
+
     try {
       const response = await fetch('http://localhost:5000/user_info/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formDataToSend),  // Send the correctly structured formData
-        credentials: 'include'
+        body: JSON.stringify(formDataToSend),
+        credentials: 'include',
       });
-  
+
       if (response.ok) {
         navigate('/interest');
         console.log('Form submitted successfully!');
       } else {
+        console.log(response);
         alert('Error submitting the form');
       }
     } catch (error) {
       console.error('Error:', error);
     }
   };
-  
 
   // Inline styles
   const formStyle = {
@@ -85,7 +87,7 @@ const FormPage = () => {
     borderRadius: '8px',
     maxWidth: '500px',
     margin: 'auto',
-    textAlign: 'left'
+    textAlign: 'left',
   };
 
   const inputStyle = {
@@ -93,12 +95,12 @@ const FormPage = () => {
     padding: '8px',
     borderRadius: '4px',
     border: '1px solid #ccc',
-    width: '100%'
+    width: '100%',
   };
 
   const labelStyle = {
     display: 'block',
-    marginBottom: '5px'
+    marginBottom: '5px',
   };
 
   const buttonStyle = {
@@ -107,13 +109,13 @@ const FormPage = () => {
     border: 'none',
     padding: '10px 20px',
     borderRadius: '4px',
-    cursor: 'pointer'
+    cursor: 'pointer',
   };
 
   return (
     <form onSubmit={handleSubmit} style={formStyle}>
       <h2>User Information Form</h2>
-      
+
       {/* Age Input */}
       <div>
         <label style={labelStyle}>Age:</label>
@@ -140,42 +142,26 @@ const FormPage = () => {
         />
       </div>
 
-      {/* District Dropdown */}
+      {/* Taluka Searchable Dropdown */}
       <div>
-        <label style={labelStyle}>District:</label>
-        <select
-          name="district"
-          value={formData.district}
-          onChange={handleDistrictChange}
-          required
-          style={inputStyle}
-        >
-          <option value="">Select District</option>
-          {Object.keys(districtCityMapping).map((district) => (
-            <option key={district} value={district}>
-              {district}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      {/* City Dropdown (Dependent on District) */}
-      <div>
-        <label style={labelStyle}>City:</label>
-        <select
-          name="city"
-          value={formData.city}
+        <label style={labelStyle}>Taluka:</label>
+        <input
+          type="text"
+          list="taluka-list"
+          name="taluka"
+          value={formData.taluka}
           onChange={handleInputChange}
           required
           style={inputStyle}
-        >
-          <option value="">Select City</option>
-          {cities.map((city) => (
-            <option key={city} value={city}>
-              {city}
-            </option>
-          ))}
-        </select>
+          placeholder="Search Taluka"
+        />
+        <datalist id="taluka-list">
+          {talukas
+            .filter(taluka => taluka.toLowerCase().includes(formData.taluka.toLowerCase()))
+            .map(taluka => (
+              <option key={taluka} value={taluka} />
+            ))}
+        </datalist>
       </div>
 
       {/* Qualification Dropdown */}

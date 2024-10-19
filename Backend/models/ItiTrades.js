@@ -1,10 +1,26 @@
 const mongoose = require('mongoose');
 
+// Define the schema for the ITI trades
 const itiTradeSchema = new mongoose.Schema({
-  iti_code: { type: String, required: true },
-  trade_id: { type: int, required: true }, 
+  Taluka: {
+    type: String,
+    required: true
+  },
+  Institution_Name_and_Address: {
+    type: String,
+    required: true
+  },
+  Contact_Number: {
+    type: String,
+    required: true
+  },
+  Trades_Offered: [{
+    type: Number, // Store the trade 'no' here as plain numbers
+    required: true
+  }]
 });
 
-itiTradeSchema.index({ iti_code: 1, trade_id: 1 }, { unique: true });
+// Create the model from the schema
+const ITITrade = mongoose.model('ITITrade', itiTradeSchema);
 
-module.exports = mongoose.model('ITITrade', itiTradeSchema);
+module.exports = ITITrade;

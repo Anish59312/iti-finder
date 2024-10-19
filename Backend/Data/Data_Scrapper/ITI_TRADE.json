@@ -1,0 +1,598 @@
+[
+    {
+        "Taluka": "Ahmedabad (Vastral)",
+        "Institution_Name_and_Address": "Industrial Training Institute, Gota-Rakhip, New Ranip-Nenpur Road, near Petrol Pump, Vastral, Ahmedabad-382470",
+        "Contact_Number": "079-27524828",
+        "Trades_Offered": [
+            3,
+            5,
+            18,
+            24,
+            25,
+            32,
+            38
+        ]
+    },
+    {
+        "Taluka": "Ahmedabad (Maninagar)",
+        "Institution_Name_and_Address": "Industrial Training Institute, Maninagar, Tarikhet Canal, near New RTO Office (East), Vastral Road, Matadevnagar Tekra, Ahmedabad-382418",
+        "Contact_Number": "079-29701052",
+        "Trades_Offered": [
+            3,
+            4,
+            5,
+            7,
+            12,
+            17,
+            18,
+            19,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            31,
+            34,
+            37,
+            38,
+            43,
+            52,
+            56,
+            59,
+            102,
+            118,
+            126,
+            131
+        ]
+    },
+    {
+        "Taluka": "Ahmedabad (Kubernagar)",
+        "Institution_Name_and_Address": "Industrial Training Institute, Kubernagar, near Railway Crossing, opposite Galleria Vasnema, Ahmedabad-382340",
+        "Contact_Number": "079-22810638",
+        "Trades_Offered": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11,
+            12,
+            13,
+            14,
+            17,
+            18,
+            19,
+            20,
+            21,
+            23,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            35,
+            36,
+            37,
+            38,
+            43,
+            48,
+            57,
+            58,
+            71,
+            121,
+            126,
+            131,
+            134,
+            135
+        ]
+    },
+    {
+        "Taluka": "Ahmedabad (Maninagar - Phase)",
+        "Institution_Name_and_Address": "Industrial Training Institute, Maninagar (Phase), Tarikhet Canal, near New RTO Office (East), Vastral Road, Matadevnagar Tekra, Ahmedabad-382418",
+        "Contact_Number": "079-29704074",
+        "Trades_Offered": [
+            7,
+            24,
+            25,
+            27,
+            29,
+            32
+        ]
+    },
+    {
+        "Taluka": "Ahmedabad (Sarasapur)",
+        "Institution_Name_and_Address": "Industrial Training Institute, Sarasapur, opposite Gurudwara, behind Kalupur Railway Station, Ahmedabad-380018",
+        "Contact_Number": "079-22923559",
+        "Trades_Offered": [
+            3,
+            4,
+            5,
+            7,
+            18,
+            22,
+            23,
+            25,
+            26,
+            28,
+            29,
+            30,
+            31,
+            32,
+            35,
+            37,
+            38,
+            52,
+            106,
+            126
+        ]
+    },
+    {
+        "Taluka": "Bavla",
+        "Institution_Name_and_Address": "Industrial Training Institute, Bavla, Ramnagar Bus Stand, near ARTO Kaneri, Bavla, Ahmedabad-382220",
+        "Contact_Number": "02714-232433",
+        "Trades_Offered": [
+            5,
+            12,
+            17,
+            25,
+            37,
+            38
+        ]
+    },
+    {
+        "Taluka": "Daskroi",
+        "Institution_Name_and_Address": "Industrial Training Institute, Sarkhej, near UC Bank, Sarkhej, Ahmedabad-382210",
+        "Contact_Number": "079-29704831 / 26823697",
+        "Trades_Offered": [
+            3,
+            4,
+            5,
+            7,
+            8,
+            17,
+            18,
+            20,
+            23,
+            25,
+            27,
+            28,
+            30,
+            31,
+            37,
+            38,
+            40,
+            71,
+            107,
+            126,
+            127
+        ]
+    },
+    {
+        "Taluka": "Dhandhuka",
+        "Institution_Name_and_Address": "Industrial Training Institute, Dhandhuka, near Sarvariya Society, behind Railway Station, Ahmedabad-382460",
+        "Contact_Number": "02713-222838",
+        "Trades_Offered": [
+            3,
+            5,
+            17,
+            18,
+            19,
+            25,
+            30,
+            38
+        ]
+    },
+    {
+        "Taluka": "Dholera",
+        "Institution_Name_and_Address": "Industrial Training Institute, Dholera, near Taluka Seva Sadan, Ahmedabad-Bhavnagar Highway, Dholera, Ahmedabad-382455",
+        "Contact_Number": "02713-234021",
+        "Trades_Offered": [
+            5,
+            17,
+            18,
+            25,
+            37,
+            38,
+            57
+        ]
+    },
+    {
+        "Taluka": "Dholka",
+        "Institution_Name_and_Address": "Industrial Training Institute, Dholka, near Krishna Vatika Society, Mujpur Road, Ahmedabad-382225",
+        "Contact_Number": "02714-294880",
+        "Trades_Offered": [
+            3,
+            5,
+            12,
+            17,
+            23,
+            25,
+            37,
+            38,
+            118
+        ]
+    },
+    {
+        "Taluka": "Mandal",
+        "Institution_Name_and_Address": "Industrial Training Institute, Mandal, Mandal-Dasada Road, Mandal, Ahmedabad-382130",
+        "Contact_Number": "02715-253177",
+        "Trades_Offered": [
+            5,
+            17,
+            25,
+            37,
+            38
+        ]
+    },
+    {
+        "Taluka": "Sanand",
+        "Institution_Name_and_Address": "Industrial Training Institute, Sanand, Muvavasna (Iyawa), Sanand-Viramgam Highway, Ahmedabad-382110",
+        "Contact_Number": "02717-284311",
+        "Trades_Offered": [
+            3,
+            5,
+            12,
+            17,
+            18,
+            25,
+            37,
+            38
+        ]
+    },
+    {
+        "Taluka": "Viramgam",
+        "Institution_Name_and_Address": "Industrial Training Institute, Viramgam, near Nilki Phatak, Banraj Road, Ahmedabad-382150",
+        "Contact_Number": "02715-295152",
+        "Trades_Offered": [
+            3,
+            4,
+            5,
+            12,
+            18,
+            25,
+            37,
+            38
+        ]
+    },
+    {
+        "Taluka": "Bayad",
+        "Institution_Name_and_Address": "Industrial Training Institute, Bayad, Gabat Road, near Sundarpura, Bayad, Arvalli-383325",
+        "Contact_Number": "02779-257991",
+        "Trades_Offered": [
+            3,
+            5,
+            17,
+            18,
+            21,
+            25,
+            31,
+            37,
+            38,
+            118
+        ]
+    },
+    {
+        "Taluka": "Bhiloda",
+        "Institution_Name_and_Address": "Industrial Training Institute, Bhiloda, near APMC Market Yard, near Dashama Vanvasi School, Bhiloda, Arvalli-383245",
+        "Contact_Number": "02771-232049",
+        "Trades_Offered": [
+            3,
+            5,
+            17,
+            18,
+            21,
+            25,
+            30,
+            31,
+            32,
+            37,
+            38,
+            43,
+            118,
+            126
+        ]
+    },
+    {
+        "Taluka": "Mehsana",
+        "Institution_Name_and_Address": "Industrial Training Institute, Idar, Jamuna Road, Idar, Arvalli-383307",
+        "Contact_Number": "02774-277300",
+        "Trades_Offered": [
+            3,
+            5,
+            17,
+            25,
+            30,
+            37,
+            38,
+            126
+        ]
+    },
+    {
+        "Taluka": "Malpur",
+        "Institution_Name_and_Address": "Industrial Training Institute, Malpur, near Livestock Market, Runarnathpur Road, Malpur, Arvalli-383345",
+        "Contact_Number": "02773-223113 / 222327",
+        "Trades_Offered": [
+            3,
+            5,
+            17,
+            25,
+            37,
+            38
+        ]
+    },
+    {
+        "Taluka": "Megharaj",
+        "Institution_Name_and_Address": "Mansutlal Desai Industrial Training Institute, near VV Science University, Kansa, Megharaj, Arvalli-383350",
+        "Contact_Number": "02773-284294",
+        "Trades_Offered": [
+            3,
+            25,
+            30,
+            32,
+            38,
+            126
+        ]
+    },
+    {
+        "Taluka": "Megharaj",
+        "Institution_Name_and_Address": "Industrial Training Institute, Vasna Road, Post Megharaj, Arvalli-383350",
+        "Contact_Number": "02773-244494",
+        "Trades_Offered": [
+            3,
+            5,
+            25,
+            32,
+            37,
+            38,
+            118
+        ]
+    },
+    {
+        "Taluka": "Modasa",
+        "Institution_Name_and_Address": "Industrial Training Institute, Malpur Road, Post Modasa, Arvalli-383315",
+        "Contact_Number": "02774-243391",
+        "Trades_Offered": [
+            1,
+            3,
+            4,
+            5,
+            7,
+            8,
+            12,
+            17,
+            18,
+            19,
+            20,
+            21,
+            23,
+            24,
+            25,
+            27,
+            28,
+            30,
+            31,
+            37,
+            38,
+            40,
+            43,
+            44,
+            71,
+            106,
+            120,
+            126,
+            137,
+            138
+        ]
+    },
+    {
+        "Taluka": "Modasa (Female)",
+        "Institution_Name_and_Address": "Industrial Training Institute, ITI Modasa Campus, Malpur Road, Post Modasa, Arvalli-383315",
+        "Contact_Number": "02774-242180",
+        "Trades_Offered": [
+            24,
+            25,
+            28,
+            29,
+            30,
+            32
+        ]
+    },
+    {
+        "Taluka": "Amirgadh",
+        "Institution_Name_and_Address": "Industrial Training Institute, behind Mamlatdar Office, Post Amirgadh, Banaskantha-385130",
+        "Contact_Number": "02742-232410",
+        "Trades_Offered": [
+            3,
+            5,
+            17,
+            25,
+            32,
+            37,
+            38
+        ]
+    },
+    {
+        "Taluka": "Bhabhar",
+        "Institution_Name_and_Address": "Industrial Training Institute, near APMC Market, Barwala Road, Bhabhar, Banaskantha-385320",
+        "Contact_Number": "02735-222040",
+        "Trades_Offered": [
+            5,
+            17,
+            25,
+            32,
+            37
+        ]
+    },
+    {
+        "Taluka": "Danta",
+        "Institution_Name_and_Address": "Industrial Training Institute, behind JD Vedi Marble, Danta Road, Post Danta, Banaskantha-385110",
+        "Contact_Number": "02749-264381",
+        "Trades_Offered": [
+            3,
+            5,
+            18,
+            25,
+            32,
+            38
+        ]
+    },
+    {
+        "Taluka": "Dantiwada",
+        "Institution_Name_and_Address": "Industrial Training Institute, opposite Model School, Dantiwada Colony, Banaskantha-385505",
+        "Contact_Number": "02748-299130",
+        "Trades_Offered": [
+            3,
+            5,
+            17,
+            25,
+            37,
+            38
+        ]
+    },
+    {
+        "Taluka": "Deesa",
+        "Institution_Name_and_Address": "Industrial Training Institute, Post Bhoyan, Taluka Deesa, Banaskantha-385535",
+        "Contact_Number": "02744-263182",
+        "Trades_Offered": [
+            3,
+            5,
+            18,
+            19,
+            24,
+            25,
+            32,
+            37,
+            38,
+            57
+        ]
+    },
+    {
+        "Taluka": "Diyodar",
+        "Institution_Name_and_Address": "Industrial Training Institute, opposite Mamlatdar Office, Diyodar, Banaskantha-385330",
+        "Contact_Number": "02735-244377",
+        "Trades_Offered": [
+            3,
+            5,
+            17,
+            25,
+            37,
+            38
+        ]
+    },
+    {
+        "Taluka": "Tharad",
+        "Institution_Name_and_Address": "Industrial Training Institute, near Malupur, Tharad-Disa Highway, Banaskantha-385565",
+        "Contact_Number": "02737-290400",
+        "Trades_Offered": [
+            3,
+            5,
+            25,
+            32,
+            37,
+            38,
+            57
+        ]
+    },
+    {
+        "Taluka": "Vadgam",
+        "Institution_Name_and_Address": "Industrial Training Institute, Tarodiya Nokdi, Post Badargadh, Taluka Vadgam, Banaskantha-385410",
+        "Contact_Number": "02742-292001",
+        "Trades_Offered": [
+            3,
+            5,
+            17,
+            25,
+            32,
+            37,
+            38
+        ]
+    },
+    {
+        "Taluka": "Vav",
+        "Institution_Name_and_Address": "Industrial Training Institute, Vav-Bhabhar Road, near Uppena Market, Vav, Banaskantha-385575",
+        "Contact_Number": "02740-227684",
+        "Trades_Offered": [
+            3,
+            5,
+            17,
+            25,
+            38
+        ]
+    },
+    {
+        "Taluka": "Dattegam",
+        "Institution_Name_and_Address": "Industrial Training Institute, opposite Navivali Kot, Taluka Dattegam, Gandhinagar-382305",
+        "Contact_Number": "02716-233901",
+        "Trades_Offered": [
+            3,
+            5,
+            7,
+            17,
+            25,
+            37,
+            38,
+            118,
+            120,
+            126
+        ]
+    },
+    {
+        "Taluka": "Gandhinagar",
+        "Institution_Name_and_Address": "Industrial Training Institute, IOC Road, near Vraj Tenement, Chandkheda, Gandhinagar-382424",
+        "Contact_Number": "079-27631818",
+        "Trades_Offered": [
+            3,
+            4,
+            5,
+            25,
+            32
+        ]
+    },
+    {
+        "Taluka": "Gandhinagar (Phase)",
+        "Institution_Name_and_Address": "Industrial Training Institute, Sector-15, Gandhinagar, near Sector 5 Bus Stand, Gandhinagar-382015",
+        "Contact_Number": "079-23221954",
+        "Trades_Offered": [
+            2,
+            3,
+            4,
+            5,
+            8,
+            12,
+            17,
+            18,
+            19,
+            21,
+            24,
+            25,
+            27,
+            30,
+            32,
+            37,
+            38,
+            118,
+            121,
+            126
+        ]
+    },
+    {
+        "Taluka": "Gandhinagar (Phase)",
+        "Institution_Name_and_Address": "Industrial Training Institute, ITI Campus, Sector-15, Gandhinagar-382016",
+        "Contact_Number": "079-9427526948",
+        "Trades_Offered": [
+            24,
+            25,
+            29,
+            30,
+            32,
+            129
+        ]
+    }
+]

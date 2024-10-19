@@ -24,9 +24,9 @@ function App() {
         <Route path="/interest" element={<InterestSelection />} />
         <Route path="/trade" element={<TradeTable />} />
         <Route path="/iti" element={<ItiTable />} />
-        <Route path="/iti/1" element={<ITIDetails />} />
-        
-        
+        <Route path="/iti/:id" element={<ITIDetails />} />
+
+
 
         {/* Protected Routes */}
         {/* <Route path="/interest" element={<ProtectedRoute element={<InterestSelection />} />} />
