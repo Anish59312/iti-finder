@@ -12,7 +12,7 @@ function ItiDetails() {
 
   const fetchITIById = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/iti_trade/${id}`, {
+      const response = await fetch(`http://localhost:5001/iti_trade/${id}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ function ItiDetails() {
 
   const fetchTradeNames = async (tradeCodes) => {
     try {
-      const response = await fetch('http://localhost:5000/trade/get-trade-names', {
+      const response = await fetch('http://localhost:5001/trade/get-trade-names', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -149,7 +149,7 @@ export default ItiDetails;
 
 //   const fetchITIById = async () => {
 //     try {
-//       const response = await fetch(`http://localhost:5000/iti_trade/${id}`, {
+//       const response = await fetch(`http://localhost:5001/iti_trade/${id}`, {
 //         method: 'GET',
 //         headers: {
 //           'Content-Type': 'application/json',
@@ -177,7 +177,7 @@ export default ItiDetails;
 
 //   const fetchTradeNames = async (tradeCodes) => {
 //     try {
-//       const response = await fetch('http://localhost:5000/trade/get-trade-names', {
+//       const response = await fetch('http://localhost:5001/trade/get-trade-names', {
 //         method: 'POST',
 //         headers: {
 //           'Content-Type': 'application/json',
@@ -258,7 +258,7 @@ export default ItiDetails;
 //     }
 
 //     try {
-//       const response = await fetch('http://localhost:5000/iti_trade/itis-by-trades/', {
+//       const response = await fetch('http://localhost:5001/iti_trade/itis-by-trades/', {
 //         method: 'POST',
 //         headers: {
 //           'Content-Type': 'application/json',

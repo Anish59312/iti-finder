@@ -1,27 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Search, Info, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Info, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate, useLocation } from 'react-router-dom';
 
 // Main component
 export default function TradeTable() {
   const navigate = useNavigate();
-  const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedTrade, setSelectedTrade] = useState(null);
   const [selectedTrades, setSelectedTrades] = useState([]);
   const [trades, setTrades] = useState([]); // State to hold fetched trades
-  const itemsPerPage = 5;
+  const itemsPerPage = 15;
+  const location = useLocation();
 
   // Fetch trades data when the component mounts
   useEffect(() => {
     const fetchTrades = async () => {
+      const { selectedInterests } = location.state || {}; 
       try {
-        const response = await fetch('http://localhost:5000/trade/get_all', {
-          method: 'GET',
-          credentials: 'include', // Include credentials in the request
+        const response = await fetch('http://localhost:5001/trade/recommend', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            InterestIds: selectedInterests,
+          }),
+          credentials: 'include'
         });
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -36,14 +42,10 @@ export default function TradeTable() {
     fetchTrades();
   }, []); // Empty dependency array means this runs once when the component mounts
 
-  const filteredTrades = trades.filter(trade =>
-    trade.tradeName.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  const totalPages = Math.ceil(filteredTrades.length / itemsPerPage);
+  const totalPages = Math.ceil(trades.length / itemsPerPage);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = filteredTrades.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = trades.slice(indexOfFirstItem, indexOfLastItem);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -62,12 +64,36 @@ export default function TradeTable() {
     );
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    
+    const { selectedInterests } = location.state || {}; 
     console.log('Selected Trades:', selectedTrades);
+    console.log('Selected Interests:',selectedInterests)
     const tradeIDs = selectedTrades.join(',');
     document.cookie = `tradeIDs=${tradeIDs};path=/;`;
-    navigate('/iti')
+
+    try {
+      const response = await fetch('http://localhost:5001/InterestTrade/insert', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          InterestIds: selectedInterests,
+          TradesSelected : selectedTrades,
+        }),
+        credentials: 'include'
+      });
+
+      if (response.ok) {
+        navigate('/iti')
+      } else {
+        alert('Error submitting the form');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
@@ -75,17 +101,6 @@ export default function TradeTable() {
       <Link to="/interest" className="mb-4 flex items-center text-blue-600 hover:text-blue-800">
         <ArrowLeft className="mr-2 h-4 w-4" /> Back to What do you like?
       </Link>
-
-      <div className="mb-4 relative">
-        <input
-          type="text"
-          placeholder="Search trades..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full pl-10 pr-4 py-2 border rounded-md"
-        />
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-      </div>
 
       <div className='overflow-x-auto'>
         <table className="bg-white min-w-full">

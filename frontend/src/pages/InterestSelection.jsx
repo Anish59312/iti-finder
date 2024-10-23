@@ -207,31 +207,32 @@ function InterestSelection() {
     setOpenInfo(openInfo === index ? null : index);
   };
 
-  const handleSubmit = async () => {
-    // console.log(formData);
+  const handleSubmit = () => {
+
     console.log("Selected interest indices:", selectedInterests);
+    navigate('/trade', { state: { selectedInterests } });
 
-    try {
-      const response = await fetch('http://localhost:5000/user_intrest/create', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          selectedInterests: selectedInterests
-        }),
-        credentials: 'include'
-      });
+    // try {
+    //   const response = await fetch('http://localhost:5001/user_intrest/create', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({
+    //       ...formData,
+    //       selectedInterests: selectedInterests
+    //     }),
+    //     credentials: 'include'
+    //   });
 
-      if (response.ok) {
-        navigate('/trade');
-      } else {
-        alert('Error submitting the form');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
+    //   if (response.ok) {
+      // navigate('/trade');
+      //   } else {
+        //     alert('Error submitting the form');
+        //   }
+        // } catch (error) {
+          //   console.error('Error:', error);
+          // }
   };
 
   return (
