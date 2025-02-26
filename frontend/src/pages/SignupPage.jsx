@@ -45,7 +45,7 @@ export default function SignupPage() {
             headers: {
               'Content-Type': 'application/json',
             },
-            credentials: 'include', // To include cookies (like JWT)
+            // credentials: 'include', // To include cookies (like JWT)
             body: JSON.stringify({ email, password }),
           });
     
