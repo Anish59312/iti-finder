@@ -3,7 +3,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
-const cors = require('cors');
+// const cors = require('cors');
 const authRoutes = require('./routes/auth');
 const tradeRoutes = require('./routes/trades');
 const itiRoutes = require('./routes/iti.js');
