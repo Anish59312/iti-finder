@@ -20,7 +20,7 @@ const app = express();
 // const cors = require('cors');
 
 
-app.use(cors({ origin: `${process.env.REACT_APP_BASE_URL}`, credentials: true }));
+// app.use(cors({ origin: `${process.env.REACT_APP_BASE_URL}`, credentials: true }));
 
 console.log(`cors working on ${process.env.REACT_APP_BASE_URL}`)
 
