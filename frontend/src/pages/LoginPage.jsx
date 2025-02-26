@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 
+const BASE_URL = process.env.BACKEND_BASE_URL;
+
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -16,7 +18,7 @@ export default function LoginPage() {
     console.log('Login attempted with:', { email, password });
 
     try {
-      const response = await fetch('http://localhost:5001/auth/login', {
+      const response = await fetch(`${BASE_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

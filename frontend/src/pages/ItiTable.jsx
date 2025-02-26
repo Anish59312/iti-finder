@@ -2,6 +2,8 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { Search, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 
+const BASE_URL = process.env.BACKEND_BASE_URL;
+
 function ItiTable() {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -24,7 +26,7 @@ function ItiTable() {
     }
 
     try {
-      const response = await fetch('http://localhost:5001/iti_trade/itis-by-trades/', {
+      const response = await fetch(`${BASE_URL}/iti_trade/itis-by-trades/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

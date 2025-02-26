@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Info } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+const BASE_URL = process.env.BACKEND_BASE_URL;
+
 const interests = [
   {
     "title": "Mechanical Interest",

@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { Map, MapPin, Phone, Building, BookOpen, ArrowLeft } from 'lucide-react';
 import { ContactFooter } from '../component/footer';
 
+const BASE_URL = process.env.BACKEND_BASE_URL;
+
 function ItiDetails() {
   const { id } = useParams();
   const [iti, setIti] = useState(null);
@@ -12,7 +14,7 @@ function ItiDetails() {
 
   const fetchITIById = async () => {
     try {
-      const response = await fetch(`http://localhost:5001/iti_trade/${id}`, {
+      const response = await fetch(`${BASE_URL}/iti_trade/${id}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -40,7 +42,7 @@ function ItiDetails() {
 
   const fetchTradeNames = async (tradeCodes) => {
     try {
-      const response = await fetch('http://localhost:5001/trade/get-trade-names', {
+      const response = await fetch(`${BASE_URL}/trade/get-trade-names`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

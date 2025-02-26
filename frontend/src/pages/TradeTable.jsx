@@ -3,6 +3,8 @@ import { ArrowLeft, Info, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
 
+const BASE_URL = process.env.BACKEND_BASE_URL;
+
 // Main component
 export default function TradeTable() {
   const navigate = useNavigate();
@@ -19,7 +21,7 @@ export default function TradeTable() {
     const fetchTrades = async () => {
       const { selectedInterests } = location.state || {}; 
       try {
-        const response = await fetch('http://localhost:5001/trade/recommend', {
+        const response = await fetch(`${BASE_URL}/trade/recommend`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -74,7 +76,7 @@ export default function TradeTable() {
     document.cookie = `tradeIDs=${tradeIDs};path=/;`;
 
     try {
-      const response = await fetch('http://localhost:5001/InterestTrade/insert', {
+      const response = await fetch(`${BASE_URL}http://localhost:5001/InterestTrade/insert`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

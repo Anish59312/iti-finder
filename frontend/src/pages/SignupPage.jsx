@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 
+const BASE_URL = process.env.BACKEND_BASE_URL;
+
 
 export default function SignupPage() {
   const [name, setName] = useState('');
@@ -23,7 +25,7 @@ export default function SignupPage() {
   
     try {
       // Send signup data to the backend
-      const response = await fetch('http://localhost:5001/auth/signup', {
+      const response = await fetch(`${BASE_URL}/auth/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -39,7 +41,7 @@ export default function SignupPage() {
 
 
         try {
-          const response1 = await fetch('http://localhost:5001/auth/login', {
+          const response1 = await fetch(`${BASE_URL}/auth/login`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

@@ -24,10 +24,10 @@ export function ContactFooter() {
         }}>
             <p>
                 If you find any issues, please report them to us at{' '}
-                <a href="mailto:youremail@example.com">youremail@example.com</a>.
+                <a href="mailto:youremail@example.com">anish31442@gmail.com</a>.
             </p>
             <p>&copy; {new Date().getFullYear()}
-                Your Company Name. All rights reserved.</p>
+                Clippid. All rights reserved.</p>
         </footer>
     );
 };
