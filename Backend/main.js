@@ -33,9 +33,9 @@ const authMiddleware = (req, res, next) => {
   // Check token in cookies or Authorization header
   const token = req.cookies.token || req.header('Authorization')?.replace('Bearer ', '');
 
-  if (!token) {
-    return res.status(401).json({ message: 'Access denied. No token provided.' });
-  }
+  // if (!token) {
+  //   return res.status(401).json({ message: 'Access denied. No token provided.' });
+  // }
 
   // console.log(token);
 
