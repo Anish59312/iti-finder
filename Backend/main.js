@@ -17,8 +17,6 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 const app = express();
-// const cors = require('cors');
-
 
 // app.use(cors({ origin: `${process.env.REACT_APP_BASE_URL}`, credentials: true }));
 
@@ -26,8 +24,8 @@ console.log(`cors working on ${process.env.REACT_APP_BASE_URL}`)
 
 // Middleware
 app.use(express.json());
-``
 app.use(cookieParser(process.env.JWT_SECRET));
+app.use(cors())
 
 const authMiddleware = (req, res, next) => {
   // Check token in cookies or Authorization header
