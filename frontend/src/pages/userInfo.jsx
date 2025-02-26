@@ -306,7 +306,7 @@ const FormPage = () => {
                 <datalist id="taluka-list">
                     {talukas
                         .filter(taluka => taluka.toLowerCase().includes(formData.taluka.toLowerCase()))
-                        .map(taluka => (<option key={taluka} value={taluka}/>))}
+                        .map((taluka, index) => (<option key={index} value={taluka}/>))}
                 </datalist>
             </div>
 
