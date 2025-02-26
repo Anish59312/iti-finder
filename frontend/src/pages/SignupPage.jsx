@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 
-const BASE_URL = process.env.BACKEND_BASE_URL;
-
+const BASE_URL = process.env.REACT_APP_BACKEND_BASE_URL;
 
 export default function SignupPage() {
   const [name, setName] = useState('');

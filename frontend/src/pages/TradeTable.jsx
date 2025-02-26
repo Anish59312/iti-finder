@@ -3,7 +3,7 @@ import { ArrowLeft, Info, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-const BASE_URL = process.env.BACKEND_BASE_URL;
+const BASE_URL = process.env.REACT_APP_BACKEND_BASE_URL;
 
 // Main component
 export default function TradeTable() {

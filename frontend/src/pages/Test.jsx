@@ -3,7 +3,7 @@ import { Map, MapPin, Phone, Building, BookOpen, ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router-dom';
 import {ContactFooter} from '../component/footer'; // Adjusted import path
 
-const BASE_URL = process.env.BACKEND_BASE_URL;
+const BASE_URL = process.env.REACT_APP_BACKEND_BASE_URL;
 
 // Mock data for a single ITI
 const itiData = {

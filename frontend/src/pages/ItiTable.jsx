@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { Search, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 
-const BASE_URL = process.env.BACKEND_BASE_URL;
+const BASE_URL = process.env.REACT_APP_BACKEND_BASE_URL;
 
 function ItiTable() {
   const [searchTerm, setSearchTerm] = useState('');
