@@ -43,8 +43,15 @@ router.post('/recommend',async (req,res) => {
   console.log("InterestIds: ",InterestIds)
 
 
-  const records = await InterestTrade.find();
-  console.log('recods,',records)
+  let records = [];
+  try {
+    records = await InterestTrade.find();
+    console.log('records,', records);
+  } catch (error) {
+    console.error('Error fetching interest trades:', error);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+  
   var RecommendedTradeIds = []
 
   console.log(records.length)

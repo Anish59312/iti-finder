@@ -3,7 +3,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
-// const cors = require('cors');
+const cors = require('cors');
 const authRoutes = require('./routes/auth');
 const tradeRoutes = require('./routes/trades');
 const itiRoutes = require('./routes/iti.js');
@@ -17,7 +17,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 const app = express();
-const cors = require('cors');
+// const cors = require('cors');
 
 
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
@@ -57,10 +57,10 @@ const authMiddleware = (req, res, next) => {
 };
 
 
-app.use(cors({
-  origin: ['http://localhost:5000'],
-  credentials: true
-}));
+// app.use(cors({
+//   origin: ['http://localhost:5000'],
+//   credentials: true
+// }));
 
 const uri = process.env.MONGO_URI;
 
@@ -83,3 +83,4 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
