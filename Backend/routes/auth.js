@@ -20,7 +20,7 @@ router.post('/signup', async (req, res) => {
     await user.save();
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
-    res.cookie('token', token, { httpOnly: true, sameSite: 'none' }).json({ message: 'User created', user });
+    res.cookie('token', token, { httpOnly: true, sameSite: 'None', secure: true }).json({ message: 'User created', user });
 
   } catch (error) {
     if (error.code === 11000) {
