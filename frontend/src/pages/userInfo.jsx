@@ -201,6 +201,11 @@ const FormPage = () => {
 
         const {taluka, age, contactNo, qualification} = formData;
 
+        console.log("onsubmit", taluka, age, contactNo, qualification);
+        console.log("Taluka value being sent:", taluka); // Added log for debugging
+
+
+
         const formDataToSend = {
             age,
             contactNo,
@@ -306,7 +311,7 @@ const FormPage = () => {
                 <datalist id="taluka-list">
                     {talukas
                         .filter(taluka => taluka.toLowerCase().includes(formData.taluka.toLowerCase()))
-                        .map((taluka, index) => (<option key={index} value={taluka}/>))}
+                        .map((taluka) => (<option key={taluka} value={taluka}/>))}
                 </datalist>
             </div>
 

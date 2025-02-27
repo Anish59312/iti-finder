@@ -7,6 +7,7 @@ router.post('/create', async (req, res) => {
   try {
     const { age, contactNo, taluka, qualification } = req.body;
     console.log('user info create called!!')
+    console.log('Taluka:',taluka)
 
     if (!talukas.includes(taluka)) {
       console.log("invalid taluka")
@@ -30,9 +31,9 @@ router.post('/create', async (req, res) => {
     });
     console.log('User info created successfully');
   } catch (error) {
-    console.error('Error creating user info:', error);
+    console.log('Error creating user info:', error);
     res.status(500).json({
-      message: 'Internal Server Error',
+      message: 'Internal Server Error internal server error',
       error: error.message
     });
   }

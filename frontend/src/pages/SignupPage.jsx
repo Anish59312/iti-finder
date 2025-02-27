@@ -29,7 +29,8 @@ export default function SignupPage() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, password }) // Assuming name isn't required in the backend
+        body: JSON.stringify({ email, password }),
+        credentials: 'include' // Assuming name isn't required in the backend
       });
   
       const data = await response.json();
@@ -45,7 +46,7 @@ export default function SignupPage() {
             headers: {
               'Content-Type': 'application/json',
             },
-            // credentials: 'include', // To include cookies (like JWT)
+            credentials: 'include', // To include cookies (like JWT)
             body: JSON.stringify({ email, password }),
           });
     

@@ -76,7 +76,7 @@ export default function TradeTable() {
     document.cookie = `tradeIDs=${tradeIDs};path=/;`;
 
     try {
-      const response = await fetch(`${BASE_URL}http://localhost:5001/InterestTrade/insert`, {
+      const response = await fetch(`${BASE_URL}/InterestTrade/insert`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

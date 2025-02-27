@@ -58,7 +58,6 @@ router.post('/recommend',async (req,res) => {
 
   if(records.length>0){
   RecommendedTradeIds = recommendFun(InterestIds,records)
-  console.log("pure maal",RecommendedTradeIds)
   RecommendedTradeIds = completeList(RecommendedTradeIds)
   console.log('Recommended trade ids: ',RecommendedTradeIds)
   }

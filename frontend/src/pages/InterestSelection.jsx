@@ -193,7 +193,8 @@ const interests = [
 function InterestSelection() {
   const navigate = useNavigate();
   const [selectedInterests, setSelectedInterests] = useState([]);
-  const [openInfo, setOpenInfo] = useState(null);
+const [openInfo, setOpenInfo] = useState(0);
+
   const location = useLocation();
   const { formData } = location.state || {};
 
