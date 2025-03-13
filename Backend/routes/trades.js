@@ -37,41 +37,42 @@ router.post('/get-trade-names', async (req, res) => {
   }
 });
 
-router.post('/recommend',async (req,res) => {
+router.post('/recommend', async (req, res) => {
   // PARAMS
-  const number_intrests = 20
-  const number_trades = 200
+  const number_intrests = 20;
+  const number_trades = 200;
 
+  let { InterestIds } = req.body;
+  console.log('recommend called in trades');
+  console.log("InterestIds: ", InterestIds);
 
-  const { InterestIds } = req.body;
-  console.log('recommend called in trades')
-  console.log("InterestIds: ",InterestIds)
-
+  // Set InterestIds to an empty list if it is undefined
+  if (!InterestIds) {
+    InterestIds = [];
+  }
 
   const records = await InterestTrade.find();
   // console.log('records,',records)
-  console.log(" #INTERACTIONS: ",records.length)
+  console.log(" #INTERACTIONS: ", records.length);
   const Interaction_dictionary = records.map(record => {
     return { [record.key]: record.values };
   });
-  console.log("Interactions in dictionary: ",Interaction_dictionary)
+  console.log("Interactions in dictionary: ", Interaction_dictionary);
 
-  RecommendedTradeIds = getRecommendations(Interaction_dictionary,number_intrests,number_trades,InterestIds) // interactions, numInterests, numCourses, userInterests// recommendFun(InterestIds,records)
-  console.log("pure maal",RecommendedTradeIds)
-  RecommendedTradeIds = completeList(RecommendedTradeIds)
-  console.log('Recommended trade ids: ',RecommendedTradeIds)
+  RecommendedTradeIds = getRecommendations(Interaction_dictionary, number_intrests, number_trades, InterestIds); // interactions, numInterests, numCourses, userInterests// recommendFun(InterestIds,records)
+  console.log("pure maal", RecommendedTradeIds);
+  RecommendedTradeIds = completeList(RecommendedTradeIds);
+  console.log('Recommended trade ids: ', RecommendedTradeIds);
 
   try {
-    if(RecommendedTradeIds.length>0){
-        const trades = await Trade.find({ no: { $in: RecommendedTradeIds } });
-        const tradesInOrder = RecommendedTradeIds
-    .map(no => trades.find(trade => trade.no === no))
-    .filter(trade => trade !== undefined); // Filter out undefined elements
+    if (RecommendedTradeIds.length > 0) {
+      const trades = await Trade.find({ no: { $in: RecommendedTradeIds } });
+      const tradesInOrder = RecommendedTradeIds
+        .map(no => trades.find(trade => trade.no === no))
+        .filter(trade => trade !== undefined); // Filter out undefined elements
 
-res.json(tradesInOrder);
-
-    }
-    else{
+      res.json(tradesInOrder);
+    } else {
       const trades = await Trade.find();
       res.json(trades);
     }
@@ -79,7 +80,6 @@ res.json(tradesInOrder);
     res.status(400).send(err.message);
   }
 })
-
 
 function completeList(arr) {
   // Step 1: Remove duplicates while maintaining original order
